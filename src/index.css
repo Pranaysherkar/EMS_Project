@@ -16,3 +16,9 @@ body {
   color: white;
 }
 
+#tasklist::-webkit-scrollbar{
+  display: none;
+}
+#ALLTask::-webkit-scrollbar{
+  display: none;
+}
