@@ -1,9 +1,476 @@
-import React from 'react'
+const employees = [
+  {
+    id: 1,
+    firstName: "Aarav",
+    email: "employee1@me.com",
+    password: "123",
+    tasks: [
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Prepare Monthly Report",
+        description: "Compile and submit the sales report for the month.",
+        date: "2024-11-18",
+        category: "Reporting",
+      },
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Update website",
+        description: "Revamp the homepage design",
+        date: "2024-10-12",
+        category: "Design",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Client meeting",
+        description: "Discuss project requirements",
+        date: "2024-10-10",
+        category: "Meeting",
+      },
+      {
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+        title: "Fix bugs",
+        description: "Resolve bugs reported in issue tracker",
+        date: "2024-10-14",
+        category: "Development",
+      },
+    ],
+    taskCount: {
+      active: 3,
+      newTask: 2,
+      completed: 1,
+      failed: 0,
+    },
+  },
+  {
+    id: 2,
+    firstName: "Ishita",
+    email: "employee2@me.com",
+    password: "123",
+    tasks: [
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Organize Team Meeting",
+        description:
+          "Schedule and coordinate a team meeting for project updates.",
+        date: "2024-11-15",
+        category: "Coordination",
+      },
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Update website",
+        description: "Revamp the homepage design",
+        date: "2024-10-12",
+        category: "Design",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Client meeting",
+        description: "Discuss project requirements",
+        date: "2024-10-10",
+        category: "Meeting",
+      },
+      {
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+        title: "Fix bugs",
+        description: "Resolve bugs reported in issue tracker",
+        date: "2024-10-14",
+        category: "Development",
+      },
+    ],
+    taskCount: {
+      active: 2,
+      newTask: 1,
+      completed: 2,
+      failed: 0,
+    },
+  },
+  {
+    id: 3,
+    firstName: "Vihaan",
+    email: "employee3@me.com",
+    password: "123",
+    tasks: [
+      {
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+        title: "Fix Website Bug",
+        description: "Resolve the navigation issue on the homepage.",
+        date: "2024-11-12",
+        category: "Development",
+      },
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Update website",
+        description: "Revamp the homepage design",
+        date: "2024-10-12",
+        category: "Design",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Client meeting",
+        description: "Discuss project requirements",
+        date: "2024-10-10",
+        category: "Meeting",
+      },
+      {
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+        title: "Fix bugs",
+        description: "Resolve bugs reported in issue tracker",
+        date: "2024-10-14",
+        category: "Development",
+      },
+    ],
+    taskCount: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
+  },
+  {
+    id: 4,
+    firstName: "Ananya",
+    email: "employee4@me.com",
+    password: "123",
+    tasks: [
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Create Marketing Plan",
+        description:
+          "Draft a marketing strategy for the upcoming product launch.",
+        date: "2024-11-20",
+        category: "Marketing",
+      },
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Update website",
+        description: "Revamp the homepage design",
+        date: "2024-10-12",
+        category: "Design",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Client meeting",
+        description: "Discuss project requirements",
+        date: "2024-10-10",
+        category: "Meeting",
+      },
+      {
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+        title: "Fix bugs",
+        description: "Resolve bugs reported in issue tracker",
+        date: "2024-10-14",
+        category: "Development",
+      },
+    ],
+    taskCount: {
+      active: 3,
+      newTask: 2,
+      completed: 1,
+      failed: 0,
+    },
+  },
+  {
+    id: 5,
+    firstName: "Aryan",
+    email: "employee5@me.com",
+    password: "123",
+    tasks: [
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Design Dashboard",
+        description: "Create a user-friendly interface for the admin panel.",
+        date: "2024-11-22",
+        category: "Design",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Update website",
+        description: "Revamp the homepage design",
+        date: "2024-10-12",
+        category: "Design",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+        title: "Debug API",
+        description: "Resolve performance issues in the API",
+        date: "2024-10-15",
+        category: "Development",
+      },
+    ],
+    taskCount: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
+  },
+  {
+    id: 6,
+    firstName: "Riya",
+    email: "employee6@me.com",
+    password: "123",
+    tasks: [
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Prepare Presentation",
+        description: "Create slides for the quarterly review meeting.",
+        date: "2024-11-10",
+        category: "Reporting",
+      },
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Create Blog Content",
+        description: "Draft a blog post on the latest tech trends",
+        date: "2024-10-18",
+        category: "Content",
+      },
+      {
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+        title: "Research Competitors",
+        description: "Analyze market competitors for strategy planning",
+        date: "2024-10-16",
+        category: "Analysis",
+      },
+    ],
+    taskCount: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
+  },
+  {
+    id: 7,
+    firstName: "Kabir",
+    email: "employee7@me.com",
+    password: "123",
+    tasks: [
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Develop Landing Page",
+        description: "Create a responsive landing page for the product.",
+        date: "2024-11-25",
+        category: "Development",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Update website",
+        description: "Revamp the homepage design",
+        date: "2024-10-12",
+        category: "Design",
+      },
+    ],
+    taskCount: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
+  },
+  {
+    id: 8,
+    firstName: "Meera",
+    email: "employee8@me.com",
+    password: "123",
+    tasks: [
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Organize Workshop",
+        description: "Plan and coordinate a skill enhancement workshop.",
+        date: "2024-11-28",
+        category: "Coordination",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Fix UI Bugs",
+        description: "Resolve visual inconsistencies in the app",
+        date: "2024-10-20",
+        category: "Development",
+      },
+    ],
+    taskCount: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
+  },
+  {
+    id: 9,
+    firstName: "Aditya",
+    email: "employee9@me.com",
+    password: "123",
+    tasks: [
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Design Marketing Poster",
+        description: "Create posters for the upcoming product launch.",
+        date: "2024-11-30",
+        category: "Marketing",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Client Presentation",
+        description: "Present project updates to the client",
+        date: "2024-10-25",
+        category: "Presentation",
+      },
+    ],
+    taskCount: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
+  },
+  {
+    id: 10,
+    firstName: "Sanya",
+    email: "employee10@me.com",
+    password: "123",
+    tasks: [
+      {
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+        title: "Test Mobile App",
+        description:
+          "Perform end-to-end testing on the latest mobile app version.",
+        date: "2024-11-18",
+        category: "Testing",
+      },
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Develop API Endpoint",
+        description: "Implement a new API for user data",
+        date: "2024-10-22",
+        category: "Development",
+      },
+    ],
+    taskCount: {
+      active: 1,
+      newTask: 1,
+      completed: 0,
+      failed: 1,
+    },
+  },
+];
 
-function localStorage() {
-  return (
-    <div>localStorage</div>
-  )
-}
+const admin = [
+  {
+    id: 101,
+    email: "admin@me.com",
+    password: "123",
+  },
+];
 
-export default localStorage
+// Function to set data in localStorage
+export const setLocalStorage = () => {
+  console.log("Setting default data in localStorage...");
+  localStorage.setItem("employees", JSON.stringify(employees));
+  localStorage.setItem("admin", JSON.stringify(admin));
+};
+
+// Function to get data from localStorage, ensuring default values are set if missing
+export const getLocalStorage = () => {
+  // Check if localStorage already has data; if not, populate it
+  if (!localStorage.getItem("employees") || !localStorage.getItem("admin")) {
+    console.log("LocalStorage is empty. Setting default values...");
+    setLocalStorage();
+  }
+
+  // Retrieve and parse data from localStorage
+  const employeesData = JSON.parse(localStorage.getItem("employees"));
+  const adminData = JSON.parse(localStorage.getItem("admin"));
+
+  // Return the retrieved data
+  return { employees: employeesData || [], admin: adminData || [] };
+};

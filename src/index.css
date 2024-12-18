@@ -20,5 +20,10 @@ body {
   display: none;
 }
 #ALLTask::-webkit-scrollbar{
-  display: none;
+ width: 5px;
+}
+
+#ALLTask::-webkit-scrollbar-thumb {
+  background: rgb(72, 201, 44); /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Optional rounded corners */
 }
